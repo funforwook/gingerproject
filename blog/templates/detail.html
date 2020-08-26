@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block extrahead %}
+    <link rel="stylesheet" href="{% static 'index.css' %}" type="text/css" />
+    <link rel="stylesheet" href="{% static 'link_upload.css' %}" type="text/css" />
+
+{% endblock %}
+
+{% block content %}
+<div>
+    <div class="dt_link">
+        링크 : {{detail_add.link}}
+    </div>
+    <div class="dt_tag">
+        태그 : {{detail_add.tag}}
+    </div>
+    <div class="dt_tag">
+        코멘트 : {{detail_add.comments}}
+    </div>
+
+
+    <a href="{% url 'delete' detail_add.id %}">삭제</a>
+    <a href="{% url 'update' detail_add.id %}">수정</a>
+</div>
+{% endblock %}

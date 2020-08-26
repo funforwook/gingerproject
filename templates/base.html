@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Base</title>
+    <title>GINGER</title>
     <link rel="stylesheet" href="{% static 'css/base.css' %}" type="text/css" />
 
     {% block extrahead %}
@@ -15,23 +15,22 @@
 
 <body>
   <nav class = 'gnb_nav'>
-
     <div class = 'left_gnb_nav'>
-      <div class = 'nav_logo' href="#">Ginger</></div>
+      <div class = 'nav_logo'><a href="{% url 'index' %}">Ginger</a></div>
       <div class = 'nav_curation' href="#">curation</div>
     </div>
 
     <div class = 'right_gnb_nav'>
-      <div class = 'nav_search' a href="#">search</div>
-      <div class = 'nav_add' a href="#">add</div>
-      <div class = 'nav_login' a hre="#">login</div>
+      <div class = 'nav_search'>search</div>
+      <div class = 'nav_add'><a href="{% url 'create' %}">+</a></a></div>
+      <div class = 'nav_login'>login</div>
       <!-- <div class = 'nav_mypage' a href="#">mypage</div> -->
     </div>
 
   </nav>
    
     {% block content %}
-    
+ 
     {% endblock %}
 </body>
 </html>
