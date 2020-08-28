@@ -36,7 +36,7 @@
 
     </div>
 
-    <div class = 'right_gnb_nav'>
+    < class = 'right_gnb_nav'>
 
       <div class = 'nav_search'>
         <a href="#">
@@ -58,31 +58,28 @@
       </div>
       
       {% else %}
+
       <div class = "login_modal">
 
       <button id="open">Login</button>
+
+      
       <div class="modal hidden">
         <div class="md_overlay"></div>
-         <div class="md_content">
+        <div class="md_content">
             <h1>로그인 하기</h1>
-           <div class="modal_text">
-             Google 또는 Kakao 계정으로 로그인을 해주시기 바랍니다.
-           </div>
-
-           <div class = "google login">
-            <a href="{% provider_login_url 'google' %}">Google Login</a>
-           </div>
-
-          <div class="kakao login">
-            <a href="{% provider_login_url 'kakao' %}">Kakao Login</a>
-           </div>
+                <div class="modal_text">
+                    Google 또는 Kakao 계정으로 로그인을 해주시기 바랍니다.</div>
+                <div class = "google login">
+                    <a href="{% provider_login_url 'google' %}">Google Login</a></div>
+                <div class="kakao login">
+                    <a href="{% provider_login_url 'kakao' %}">Kakao Login</a></div>
 
           <button>X</button>
          </div>
-        </div>
       </div>
-    </div>
 
+    
       {% endif %}
       
       <script type="text/javascript">
