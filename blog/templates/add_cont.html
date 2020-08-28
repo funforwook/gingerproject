@@ -6,13 +6,31 @@
 {% endblock %}
 
 {% block content %}
+    {% if all_add %}
+    <ul class="cont_list">
+    {% for i in all_add %} <!--one_add은여기서지정,all_add는뷰에서지정-->
+        <li class="thumb_cont" >
+            <a href="{{i.link}}" target="_blank">{{i.link}}</a>
+            <!--<a href="{% url 'update' i.id %}" class="btn_midf">수정</a>-->
+            <a href="{% url 'update' i.id %}">수정</a>
+            <a href="{% url 'delete' i.id %}" class="btn_dele">삭제</a>
+            <!--{{ i.link | urlize }}-->
+        </li>
+        <!--{% if detail_add.author == user %}-->
+        <!-- {% endif %} -->
+    {% endfor %}
+    </ul>
+    {% else %}
+    <div class="con_area_empty">
+        <a class="btn_plus" onclick="show_modal()"><span>+</span></a>
+    </div>
+    {% endif %}
 
-       <div id="content_add">
-            <form method="POST">
-                {% csrf_token %}
-                {{write_form.as_ul}}
-             <input type="submit" value="추가" class="btn_add">
-            </form>
-      </div>
-      
+    <div id="content_modi">
+    <form action="{% url 'update' add_id %}" method="POST" >
+        {% csrf_token %}
+        {{write_form.as_ul}}
+    <input type="submit" value="완료" class="btn_add">
+    </form>
+    </div>
 {% endblock %}

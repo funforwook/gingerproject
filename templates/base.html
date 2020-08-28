@@ -22,7 +22,7 @@
 
     <div class = 'right_gnb_nav'>
       <div class = 'nav_search'>search</div>
-      <div class = 'nav_add'><a href="{% url 'create' %}">+</a></a></div>
+      <div class = 'nav_add' onclick="show_modal()"><span >+</span></div>
       <div class = 'nav_login'>login</div>
       <!-- <div class = 'nav_mypage' a href="#">mypage</div> -->
     </div>
@@ -32,5 +32,15 @@
     {% block content %}
  
     {% endblock %}
+
+    <script>
+      function show_modal(){
+        document.querySelector("#content_add").classList.toggle("show")
+      }
+      
+      function show_modal_modi(){
+        document.querySelector("#content_modi").classList.toggle("show")
+      }
+    </script>
 </body>
 </html>

@@ -9,7 +9,8 @@
         margin:0 auto;
         position:relative;
         margin-top:20px;
-        border-radius: 5px;}
+        border-radius: 5px;
+    }
 
 .btn_plus{
         background-color:gainsboro;
@@ -49,4 +50,3 @@
 li:nth-child( 4n ){
     margin-right:0;
 }
-    

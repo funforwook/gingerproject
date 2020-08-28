@@ -100,4 +100,9 @@ input{
     /* flex-direction: row;
     flex-wrap: nowrap;
     overflow: auto; */
+    cursor: pointer;
+}
+
+.show{
+    display: block;
 }
