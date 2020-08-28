@@ -1,13 +1,16 @@
 {% extends 'base.html' %} 
+{% load socialaccount %}
+{% providers_media_js %}
+
 {% load static %}
+
 {% block extrahead %}
     <link rel="stylesheet" href="{% static 'css/index.css' %}" type="text/css" />
 {% endblock %}
 
-{% block contetnt %}
+{% block content %}
 
-<div class = "containter">
+<h1>hello world!</h1>
 
-<a class="save_btn" href="{% url 'creat' %}">담기</a>
 
 {% endblock %}

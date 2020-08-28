@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% load socialaccount %}
+{% providers_media_js %}
+{% load static %}
+
+{% block extrahead %}
+<link rel="stylesheet" href="{% static 'css/profile.css' %}" type="text/css" />
+{% endblock %}
+
+{% block content %}
+
+{% if user.is_authenticcated %}
+
+{% get_social_accounts user as accounts %}
+
+{% endif %}
+{{user.email}}
+<div class = 'mypage'>
+    {% if user.is_authenticated %}
+        {% for i in accounts.kakao %}
+            {{i.extra_data}}
+        {% endfor %}
+    {% endif %}
+    <!-- {{% for i in accounts.google %}
+    {{i.extra_data.google_account.nickname}}
+    {% endfor %}} -->
+
+</div>
+
+<div class='authented_box'>
+
+    {% if user.is_authenticated %}
+        <a href="{% url 'logout' %}">Logout</a>
+    {%else%}
+        <a href="{% url 'login' %}">login</a>
+    {%endif%}
+
+</div>
+
+
+{% endblock %}
+
+
