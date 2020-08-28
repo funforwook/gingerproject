@@ -33,6 +33,9 @@ def detail(request, add_id):
 
 def update(request, add_id):
     context= dict()
+    all_add = Add.objects.all()
+    context['all_add'] = all_add
+    context['add_id']= add_id
     if request.method == "POST":
         temp_form = AddForms(request.POST,instance=Add.objects.get(id = add_id))
         if temp_form.is_valid():

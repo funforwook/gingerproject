@@ -11,10 +11,8 @@
     {% for i in all_add %} <!--one_add은여기서지정,all_add는뷰에서지정-->
         <li class="thumb_cont" >
             <a href="{{i.link}}" target="_blank">{{i.link}}</a>
-            <!--<a href="{% url 'update' i.id %}" class="btn_midf">수정</a>-->
             <a href="{% url 'update' i.id %}">수정</a>
             <a href="{% url 'delete' i.id %}" class="btn_dele">삭제</a>
-            <!--{{ i.link | urlize }}-->
         </li>
         <!--{% if detail_add.author == user %}-->
         <!-- {% endif %} -->

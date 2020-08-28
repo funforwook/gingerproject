@@ -103,16 +103,8 @@ display: inline-block;
     margin: 0.5rem;
     flex-direction: row; 
     flex-wrap: nowrap;
-<<<<<<< HEAD
-    overflow: auto; */
-    cursor: pointer;
-}
-
-.show{
-    display: block;
-}
-=======
     overflow: auto;
+    cursor: pointer;
 }
 
 h3{
@@ -163,13 +155,14 @@ button{
     text-align: left    ;
     border-radius: 6px;
     box-shadow: 0 10px 20px rgba(0,0,0,0.20), 0 6px 6px rgba(0, 0, 0, 0.20);
-   
+}
+
 h1 {
     margin:0; 
-    padding: 5px;
+    padding:5px;
 }
+
 .hidden {
     display: none;
 }
 .modal_text { padding: 16px; }
->>>>>>> 4a9c5e4c46048c3a0fdb765c61ccf157081513d6
