@@ -4,15 +4,30 @@ text-decoration: none;
 letter-spacing: 1.5px;
 } 
 
-body{
-background-color: white;
-color: black;
-margin:1rem;
-}
+
 
 a,a:visited{
 color:inherit;
 text-decoration: none;
+
+body{
+    background-color: #e7e7e7;
+    margin:0;
+}
+
+
+li{
+
+   list-style-type: none;
+}
+input{
+
+   border-radius: 0; /* iSO 둥근모서리 제거 */
+   outline-style: none; /* 포커스시 발생하는 효과 제거를 원한다면 */
+   -webkit-appearance: none; /* 브라우저별 기본 스타일링 제거 */
+   -moz-appearance: none;
+   appearance: none;
+
 }
 
 /* .gnb_nav{
@@ -54,12 +69,12 @@ display: inline-block;
 } */
 
 .gnb_nav{
-position: sticky;
-border-bottom: 2.5px solid black;
-/* padding-bottom: 0.5rem; */
+    position: sticky;
+    padding-bottom: 0.5rem;
 
-display: flex;
-justify-content: space-between;
+    display: flex;
+    justify-content: space-between;
+    background-color:#fff;
 }
 
 .left_gnb_nav{

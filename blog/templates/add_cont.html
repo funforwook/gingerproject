@@ -1,0 +1,18 @@
+{% extends 'base.html' %} 
+{% load static %}
+{% block extrahead %}
+    <link rel="stylesheet" href="{% static 'css/index.css' %}" type="text/css" />
+    <link rel="stylesheet" href="{% static 'css/link_upload.css' %}" type="text/css" />
+{% endblock %}
+
+{% block content %}
+
+       <div id="content_add">
+            <form method="POST">
+                {% csrf_token %}
+                {{write_form.as_ul}}
+             <input type="submit" value="추가" class="btn_add">
+            </form>
+      </div>
+      
+{% endblock %}

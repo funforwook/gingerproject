@@ -6,11 +6,24 @@
 
 {% block extrahead %}
     <link rel="stylesheet" href="{% static 'css/index.css' %}" type="text/css" />
+    <link rel="stylesheet" href="{% static 'css/link_upload.css' %}" type="text/css" />
 {% endblock %}
 
 {% block content %}
-
-<h1>hello world!</h1>
-
+    {% if all_add %}
+        <ul class="cont_list">
+        {% for i in all_add %} <!--one_add은여기서지정,all_add는뷰에서지정-->
+            <li class="thumb_cont">
+                <a href="{% url 'detail' i.id %}">{{i.link}}</a>
+            </li>
+            <!--{% if detail_add.author == user %}-->
+            <!-- {% endif %} -->
+        {% endfor %}
+        </ul>
+    {% else %}
+        <div class="con_area_empty">
+            <a class="btn_plus" href="{% url 'create' %}"><span>+</span></a>
+        </div>
+    {% endif %}
 
 {% endblock %}
