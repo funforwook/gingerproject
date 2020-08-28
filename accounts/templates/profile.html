@@ -9,22 +9,28 @@
 
 {% block content %}
 
-{% if user.is_authenticcated %}
+{% if user.is_authenticated %}
 
 {% get_social_accounts user as accounts %}
 
 {% endif %}
-{{user.email}}
 <div class = 'mypage'>
-    {% if user.is_authenticated %}
-        {% for i in accounts.kakao %}
-            {{i.extra_data}}
-        {% endfor %}
-    {% endif %}
-    <!-- {{% for i in accounts.google %}
-    {{i.extra_data.google_account.nickname}}
-    {% endfor %}} -->
 
+    {% if user.is_authenticated %}
+    
+        {% for i in accounts.google %}
+            <img src="{{i.extra_data.picture}}"><br>
+            <h3>닉네임: {{i.extra_data.name}}</h3><br>
+        {% endfor %}
+
+
+        {% for i in accounts.kakao %}
+            <img src="{{i.extra_data.properties.thumbnail_image}}"><br>
+            <h3>닉네임: {{i.extra_data.properties.nickname}}</h3><br>
+        {% endfor %} 
+
+
+    {% endif %} 
 </div>
 
 <div class='authented_box'>

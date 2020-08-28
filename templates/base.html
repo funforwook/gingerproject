@@ -45,8 +45,8 @@
       </div>
 
       <div class = 'nav_add'>
-        <a href="#">
-          <h3>add</h3>
+        <a href="{% url 'create' %}">
+          <h3>+</h3>
        </a>
       </div>
       
@@ -68,12 +68,14 @@
            <div class="modal_text">
              Google 또는 Kakao 계정으로 로그인을 해주시기 바랍니다.
            </div>
+
            <div class = "google login">
-            <a href="{% provider_login_url 'google' %}">Google Login</a><br>
-            <a href="{% provider_login_url 'kakao' %}">Kakao Login</a><br>
+            <a href="{% provider_login_url 'google' %}">Google Login</a>
            </div>
 
-           <br>
+          <div class="kakao login">
+            <a href="{% provider_login_url 'kakao' %}">Kakao Login</a>
+           </div>
 
           <button>X</button>
          </div>
@@ -110,16 +112,16 @@
           <h3>login</h3>
         </a> 
       </div> -->
-      <div class = 'nav_logo'><a href="{% url 'index' %}">Ginger</a></div>
-      <div class = 'nav_curation' href="#">curation</div>
-    </div>
+      <!-- <div class = 'nav_logo'><a href="{% url 'index' %}">Ginger</a></div> -->
+      <!-- <div class = 'nav_curation' href="#">curation</div> -->
 
-    <div class = 'right_gnb_nav'>
-      <div class = 'nav_search'>search</div>
-      <div class = 'nav_add'><a href="{% url 'create' %}">+</a></a></div>
-      <div class = 'nav_login'>login</div>
+
+    <!-- <div class = 'right_gnb_nav'> -->
+      <!-- <div class = 'nav_search'>search</div> -->
+      <!-- <div class = 'nav_add'><a href="{% url 'create' %}">+</a></a></div> -->
+      <!-- <div class = 'nav_login'>login</div> -->
       <!-- <div class = 'nav_mypage' a href="#">mypage</div> -->
-    </div>
+    <!-- </div> -->
     </nav>
   
   
