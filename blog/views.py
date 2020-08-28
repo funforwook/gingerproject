@@ -10,7 +10,6 @@ def index(request):
     context['all_add'] = all_add
     print(request.GET)
     context["write_form"] = AddForms()
-
     return render(request,'index.html',context)
 
 def create(request):

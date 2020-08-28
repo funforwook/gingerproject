@@ -36,7 +36,7 @@
 
     </div>
 
-    < class = 'right_gnb_nav'>
+    <div class = 'right_gnb_nav'>
 
       <div class = 'nav_search'>
         <a href="#">
@@ -82,27 +82,7 @@
     
       {% endif %}
       
-      <script type="text/javascript">
-       
-        //필요한 엘리먼트들을 선택한다.
-        const openButton = document.getElementById("open");
-        const modal = document.querySelector(".modal");
-        const overlay = modal.querySelector(".md_overlay");
-        const closeButton = modal.querySelector("button");
-
-        //동작함수
-        const openModal = () => {
-          modal.classList.remove("hidden");
-        }
-        const closeModal = () => {
-          modal.classList.add("hidden");
-        }
-        //클릭 이벤트
-        openButton.addEventListener("click", openModal);
-        closeButton.addEventListener("click", closeModal);
-        
-
-      </script>
+    
 
       <!-- <div class = 'nav_login'>
         <a href="#">
@@ -137,5 +117,27 @@
         document.querySelector("#content_modi").classList.toggle("show")
       }
     </script>
+      <script type="text/javascript">
+
+        //필요한 엘리먼트들을 선택한다.
+        const openButton = document.getElementById("open");
+        const modal = document.querySelector(".modal");
+        const overlay = modal.querySelector(".md_overlay");
+        const closeButton = modal.querySelector("button");
+
+        //동작함수
+        const openModal = () => {
+          modal.classList.remove("hidden");
+        }
+        const closeModal = () => {
+          modal.classList.add("hidden");
+        }
+        //클릭 이벤트
+        openButton.addEventListener("click", openModal);
+        closeButton.addEventListener("click", closeModal);
+        overlay.addEventListener("click", closeModal);
+
+
+      </script>
 </body>
 </html>
