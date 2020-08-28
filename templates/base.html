@@ -1,3 +1,4 @@
+{% load socialaccount %}
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
@@ -5,7 +6,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>GINGER</title>
+    <title>
+        {% block title %}
+          Ginger    
+        {%endblock%}
+    </title>
     <link rel="stylesheet" href="{% static 'css/base.css' %}" type="text/css" />
 
     {% block extrahead %}
@@ -16,18 +21,118 @@
 <body>
   <nav class = 'gnb_nav'>
     <div class = 'left_gnb_nav'>
-      <div class = 'nav_logo'><a href="{% url 'index' %}">Ginger</a></div>
-      <div class = 'nav_curation' href="#">curation</div>
+
+      <div class = 'nav_logo'>
+        <a href="{% url 'index' %}">
+          <h3>ginger</h3>
+        </a>
+      </div>
+
+      <div class = 'nav_curation'>
+        <a href="#">
+          <h3>curation</h3>
+        </a>
+      </div>
+
     </div>
 
     <div class = 'right_gnb_nav'>
+<<<<<<< HEAD
       <div class = 'nav_search'>search</div>
       <div class = 'nav_add' onclick="show_modal()"><span >+</span></div>
       <div class = 'nav_login'>login</div>
       <!-- <div class = 'nav_mypage' a href="#">mypage</div> -->
+=======
+
+      <div class = 'nav_search'>
+        <a href="#">
+         <h3>search</h3>
+        </a>
+      </div>
+
+      <div class = 'nav_add'>
+        <a href="{% url 'create' %}">
+          <h3>+</h3>
+       </a>
+      </div>
+      
+      {% if user.is_authenticated %}
+      <div class = 'nav_profile'>
+        <a href="{% url 'profile' %}">
+          <h3>My page</h3>
+        </a>
+      </div>
+      
+      {% else %}
+      <div class = "login_modal">
+
+      <button id="open">Login</button>
+      <div class="modal hidden">
+        <div class="md_overlay"></div>
+         <div class="md_content">
+            <h1>로그인 하기</h1>
+           <div class="modal_text">
+             Google 또는 Kakao 계정으로 로그인을 해주시기 바랍니다.
+           </div>
+
+           <div class = "google login">
+            <a href="{% provider_login_url 'google' %}">Google Login</a>
+           </div>
+
+          <div class="kakao login">
+            <a href="{% provider_login_url 'kakao' %}">Kakao Login</a>
+           </div>
+
+          <button>X</button>
+         </div>
+        </div>
+      </div>
+>>>>>>> 4a9c5e4c46048c3a0fdb765c61ccf157081513d6
     </div>
 
-  </nav>
+      {% endif %}
+      
+      <script type="text/javascript">
+       
+        //필요한 엘리먼트들을 선택한다.
+        const openButton = document.getElementById("open");
+        const modal = document.querySelector(".modal");
+        const overlay = modal.querySelector(".md_overlay");
+        const closeButton = modal.querySelector("button");
+
+        //동작함수
+        const openModal = () => {
+          modal.classList.remove("hidden");
+        }
+        const closeModal = () => {
+          modal.classList.add("hidden");
+        }
+        //클릭 이벤트
+        openButton.addEventListener("click", openModal);
+        closeButton.addEventListener("click", closeModal);
+        
+
+      </script>
+
+      <!-- <div class = 'nav_login'>
+        <a href="#">
+          <h3>login</h3>
+        </a> 
+      </div> -->
+      <!-- <div class = 'nav_logo'><a href="{% url 'index' %}">Ginger</a></div> -->
+      <!-- <div class = 'nav_curation' href="#">curation</div> -->
+
+
+    <!-- <div class = 'right_gnb_nav'> -->
+      <!-- <div class = 'nav_search'>search</div> -->
+      <!-- <div class = 'nav_add'><a href="{% url 'create' %}">+</a></a></div> -->
+      <!-- <div class = 'nav_login'>login</div> -->
+      <!-- <div class = 'nav_mypage' a href="#">mypage</div> -->
+    <!-- </div> -->
+    </nav>
+  
+  
+
    
     {% block content %}
  

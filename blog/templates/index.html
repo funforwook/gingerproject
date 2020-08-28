@@ -1,5 +1,9 @@
 {% extends 'base.html' %} 
+{% load socialaccount %}
+{% providers_media_js %}
+
 {% load static %}
+
 {% block extrahead %}
     <link rel="stylesheet" href="{% static 'css/index.css' %}" type="text/css" />
     <link rel="stylesheet" href="{% static 'css/link_upload.css' %}" type="text/css" />
